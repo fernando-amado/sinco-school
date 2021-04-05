@@ -1,0 +1,51 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="SincoSchoolDBStoreContainer" CdmEntityContainer="SincoSchoolDBContainer">
+    <EntitySetMapping Name="Alumnos">
+      <EntityTypeMapping TypeName="SincoSchoolDB.Alumnos">
+        <MappingFragment StoreEntitySet="Alumnos">
+          <ScalarProperty Name="EstadoAlumno" ColumnName="EstadoAlumno" />
+          <ScalarProperty Name="Apellido" ColumnName="Apellido" />
+          <ScalarProperty Name="Nombre" ColumnName="Nombre" />
+          <ScalarProperty Name="IdAlumno" ColumnName="IdAlumno" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="MateriaAlumno">
+      <EntityTypeMapping TypeName="SincoSchoolDB.MateriaAlumno">
+        <MappingFragment StoreEntitySet="MateriaAlumno">
+          <ScalarProperty Name="Alumnoes_IdAlumno" ColumnName="Alumnoes_IdAlumno" />
+          <ScalarProperty Name="Materia_IdMateria" ColumnName="Materia_IdMateria" />
+          <ScalarProperty Name="IdMateriaAlumno" ColumnName="IdMateriaAlumno" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="MateriaProfesors">
+      <EntityTypeMapping TypeName="SincoSchoolDB.MateriaProfesors">
+        <MappingFragment StoreEntitySet="MateriaProfesors">
+          <ScalarProperty Name="Materias_IdMateria" ColumnName="Materias_IdMateria" />
+          <ScalarProperty Name="IdProfesorFK" ColumnName="IdProfesorFK" />
+          <ScalarProperty Name="IdMaterialProfesor" ColumnName="IdMaterialProfesor" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Materias">
+      <EntityTypeMapping TypeName="SincoSchoolDB.Materias">
+        <MappingFragment StoreEntitySet="Materias">
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="IdMateria" ColumnName="IdMateria" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Profesor">
+      <EntityTypeMapping TypeName="SincoSchoolDB.Profesor">
+        <MappingFragment StoreEntitySet="Profesor">
+          <ScalarProperty Name="EstadoProfesor" ColumnName="EstadoProfesor" />
+          <ScalarProperty Name="Apellido" ColumnName="Apellido" />
+          <ScalarProperty Name="Nombre" ColumnName="Nombre" />
+          <ScalarProperty Name="IdProfesor" ColumnName="IdProfesor" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>
