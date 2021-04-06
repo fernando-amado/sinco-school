@@ -1,0 +1,66 @@
+body{
+    padding: 0;
+    margin: 0;
+    font-family: Roboto;
+}
+
+.navbar{
+    width: 25%;
+    height: 790px;
+    padding: 20px;
+    box-sizing: border-box;
+    background-color: black;
+    flex: auto;
+    justify-content: center;
+}
+
+a{
+    text-decoration: none;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 36px;
+    line-height: 42px;
+    color: #029BFF;
+}
+
+h1{
+    font-style: normal;
+    font-weight: bold;
+    font-size: 36px;
+    line-height: 42px;
+    color: #029BFF;
+}
+
+main{
+    position: absolute;
+    left: 30%;
+    top: 5%;
+}
+
+hr{
+    width: 900px;
+    height: 0px;
+    border: 2px solid #FF4505;
+}
+
+#teacherIcon {
+    position: relative;
+    width: 132px;
+    height: 145px;
+    margin: 20% 30% 
+    
+}
+
+#Sinco_Logo{
+    width: 194px;
+    height: 54px;
+}
+
+li{
+    margin: 20% 0;
+}
+
+
+
+
+
