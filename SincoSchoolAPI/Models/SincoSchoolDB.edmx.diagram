@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="aef1e825767f44d59ebda0142bf71aae" Name="Diagram1" ZoomLevel="131">
+        <EntityTypeShape EntityType="SincoSchoolDBModel.Alumnos" Width="1.5" PointX="0.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="SincoSchoolDBModel.MateriaProfesors" Width="1.5" PointX="3" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="SincoSchoolDBModel.Materias" Width="1.5" PointX="0.75" PointY="3.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="SincoSchoolDBModel.Profesor" Width="1.5" PointX="0.75" PointY="6.5" IsExpanded="true" />
+        <AssociationConnector Association="SincoSchoolDBModel.FK_MateriaProfesorMateria" ManuallyRouted="false" />
+        <AssociationConnector Association="SincoSchoolDBModel.FK_ProfessorMateriaProfesor" ManuallyRouted="false" />
+        <EntityTypeShape EntityType="SincoSchoolDBModel.MateriaAlumno" Width="1.5" PointX="3" PointY="4" />
+        <AssociationConnector Association="SincoSchoolDBModel.FK_MateriaAlumnoAlumno" />
+        <AssociationConnector Association="SincoSchoolDBModel.FK_MateriaMateriaAlumno" />
+        </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>
