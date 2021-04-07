@@ -1,0 +1,117 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="SincoSchoolDBModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityType Name="Alumnos">
+    <Key>
+      <PropertyRef Name="IdAlumno" />
+    </Key>
+    <Property Name="IdAlumno" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Nombre" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="Apellido" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="EstadoAlumno" Type="bit" Nullable="false" />
+  </EntityType>
+  <EntityType Name="MateriaAlumno">
+    <Key>
+      <PropertyRef Name="IdMateriaAlumno" />
+    </Key>
+    <Property Name="IdMateriaAlumno" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Materia_IdMateria" Type="int" Nullable="false" />
+    <Property Name="Alumnoes_IdAlumno" Type="int" Nullable="false" />
+    <Property Name="Nota1" Type="real" />
+    <Property Name="Nota2" Type="real" />
+  </EntityType>
+  <EntityType Name="MateriaProfesors">
+    <Key>
+      <PropertyRef Name="IdMaterialProfesor" />
+    </Key>
+    <Property Name="IdMaterialProfesor" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="IdProfesorFK" Type="int" Nullable="false" />
+    <Property Name="Materias_IdMateria" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Materias">
+    <Key>
+      <PropertyRef Name="IdMateria" />
+    </Key>
+    <Property Name="IdMateria" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Name" Type="nvarchar(max)" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Profesor">
+    <Key>
+      <PropertyRef Name="IdProfesor" />
+    </Key>
+    <Property Name="IdProfesor" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Nombre" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="Apellido" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="EstadoProfesor" Type="bit" />
+  </EntityType>
+  <Association Name="FK_MateriaAlumnoAlumno">
+    <End Role="Alumnos" Type="Self.Alumnos" Multiplicity="1" />
+    <End Role="MateriaAlumno" Type="Self.MateriaAlumno" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Alumnos">
+        <PropertyRef Name="IdAlumno" />
+      </Principal>
+      <Dependent Role="MateriaAlumno">
+        <PropertyRef Name="Alumnoes_IdAlumno" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_MateriaMateriaAlumno">
+    <End Role="Materias" Type="Self.Materias" Multiplicity="1" />
+    <End Role="MateriaAlumno" Type="Self.MateriaAlumno" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Materias">
+        <PropertyRef Name="IdMateria" />
+      </Principal>
+      <Dependent Role="MateriaAlumno">
+        <PropertyRef Name="Materia_IdMateria" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_MateriaProfesorMateria">
+    <End Role="Materias" Type="Self.Materias" Multiplicity="1" />
+    <End Role="MateriaProfesors" Type="Self.MateriaProfesors" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Materias">
+        <PropertyRef Name="IdMateria" />
+      </Principal>
+      <Dependent Role="MateriaProfesors">
+        <PropertyRef Name="Materias_IdMateria" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_ProfessorMateriaProfesor">
+    <End Role="Profesor" Type="Self.Profesor" Multiplicity="1" />
+    <End Role="MateriaProfesors" Type="Self.MateriaProfesors" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Profesor">
+        <PropertyRef Name="IdProfesor" />
+      </Principal>
+      <Dependent Role="MateriaProfesors">
+        <PropertyRef Name="IdProfesorFK" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityContainer Name="SincoSchoolDBModelStoreContainer">
+    <EntitySet Name="Alumnos" EntityType="Self.Alumnos" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="MateriaAlumno" EntityType="Self.MateriaAlumno" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="MateriaProfesors" EntityType="Self.MateriaProfesors" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Materias" EntityType="Self.Materias" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Profesor" EntityType="Self.Profesor" Schema="dbo" store:Type="Tables" />
+    <AssociationSet Name="FK_MateriaAlumnoAlumno" Association="Self.FK_MateriaAlumnoAlumno">
+      <End Role="Alumnos" EntitySet="Alumnos" />
+      <End Role="MateriaAlumno" EntitySet="MateriaAlumno" />
+    </AssociationSet>
+    <AssociationSet Name="FK_MateriaMateriaAlumno" Association="Self.FK_MateriaMateriaAlumno">
+      <End Role="Materias" EntitySet="Materias" />
+      <End Role="MateriaAlumno" EntitySet="MateriaAlumno" />
+    </AssociationSet>
+    <AssociationSet Name="FK_MateriaProfesorMateria" Association="Self.FK_MateriaProfesorMateria">
+      <End Role="Materias" EntitySet="Materias" />
+      <End Role="MateriaProfesors" EntitySet="MateriaProfesors" />
+    </AssociationSet>
+    <AssociationSet Name="FK_ProfessorMateriaProfesor" Association="Self.FK_ProfessorMateriaProfesor">
+      <End Role="Profesor" EntitySet="Profesor" />
+      <End Role="MateriaProfesors" EntitySet="MateriaProfesors" />
+    </AssociationSet>
+  </EntityContainer>
+</Schema>
