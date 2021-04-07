@@ -175,3 +175,6 @@ C:\SourceCode\Sinco School Git\sinco-school\SincoSchoolAPI\obj\Debug\SincoSchool
 C:\SourceCode\Sinco School Git\sinco-school\SincoSchoolAPI\obj\Debug\SincoSchoolAPI.csproj.CopyComplete
 C:\SourceCode\Sinco School Git\sinco-school\SincoSchoolAPI\obj\Debug\SincoSchoolAPI.dll
 C:\SourceCode\Sinco School Git\sinco-school\SincoSchoolAPI\obj\Debug\SincoSchoolAPI.pdb
+C:\SourceCode\Sinco School Git\sinco-school\SincoSchoolAPI\bin\System.Web.Cors.dll
+C:\SourceCode\Sinco School Git\sinco-school\SincoSchoolAPI\bin\System.Web.Http.Cors.dll
+C:\SourceCode\Sinco School Git\sinco-school\SincoSchoolAPI\bin\System.Web.Http.Cors.xml
