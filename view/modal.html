@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Document</title>
+		<link rel="stylesheet" href="./assets/estilos/style-modal.css" />
+        <link rel="preconnect" href="https://fonts.gstatic.com">
+<link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+	</head>
+	<body>
+		<button class="boton">Modal</button>
+		<section class="ventana-modal">
+			<div class="modal">
+				<header class="cabeza-modal">
+					<h1 class="titulo-modal">Calificación Estudiante</h1>
+					<div class="cerrar">
+						<p>X</p>
+					</div>
+				</header>
+				<form action="" class="formulario">
+					<div class="inputs">
+						<div class="grupo">
+							<label for="estudiante">Estudiante </label>
+							<select name="estudiante" id="estudiante" class="select">
+								<option value="">Seleccione un estudiante</option>
+								<option value="">Julian</option>
+								<option value="">Alan</option>
+								<option value="">Esteban</option>
+								<option value="">Raymoon</option>
+								<option value="">James</option>
+								<option value="">Harold</option>
+							</select>
+						</div>
+						<div class="grupo">
+							<label for="materia">Materia</label>
+							<select name="materia" id="materia" class="select">
+								<option value="">Seleccione uns materia</option>
+								<option value="">Html</option>
+								<option value="">Css</option>
+								<option value="">Js</option>
+								<option value="">C#</option>
+							</select>
+						</div>
+						<div class="grupo">
+							<label for="nota1">Nota 1</label>
+							<input type="num" name="nota1" id="nota1" class="input" />
+						</div>
+						<div class="grupo">
+							<label for="nota2">Nota 2</label>
+							<input type="num" name="nota2" id="nota2" class="input" />
+						</div>
+					</div>
+                    <div class="contenedor-botones">
+                        <button type="reset" class="resetear botones">Resetar</button>
+                        <button type="submit" class="guardar botones">Guardar</button>
+                    </div>
+				</form>
+			</div>
+		</section>
+	</body>
+	<script src="./assets/js/modal.js"></script>
+</html>

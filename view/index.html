@@ -1,55 +1,82 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Sinco School</title>
-    <link rel="stylesheet" href="./assets/estilos/style.css">
-</head>
-<body>
-        
+	<head>
+		<meta charset="UTF-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Sinco School</title>
+		<link rel="stylesheet" href="./assets/estilos/style.css" />
+	</head>
+	<body>
+		<nav class="navbar">
+			<img
+				src="assets/img/sinco-erp-blanco.svg"
+				alt="Sinco_Logo"
+				class="Sinco_Logo"
+			/>
+			<img src="assets/img/teacher.png" alt="teacherIcon" id="teacherIcon" />
+			<ul class="ul-Navegacion">
+				<li class="botonNav botonEstudiante">
+					<span class="spanboton">Estudiante</span>
+					<ul class="subMenu">
+						<li class="subLi">
+							<span class="subSpan"> Gestionar Estudiantes </span>
+						</li>
+						<li class="subLi"><span class="subSpan"> Asignar Notas</span></li>
+						<li class="subLi"><span class="subSpan"> Ver Reporte</span></li>
+					</ul>
+				</li>
+				<li class="botonNav"><span class="spanboton"> Materia</span></li>
+				<li class="botonNav">
+					<span class="spanboton">Profesor</span>
+					<ul class="subMenu">
+						<li class="subLi">
+							<span class="subSpan"> Gestionar Profesores </span>
+						</li>
+						<li class="subLi">
+							<span class="subSpan"> Asignar Materias</span>
+						</li>
+					</ul>
+				</li>
+			</ul>
+		</nav>
+		<main>
+			<h1>SINCO SCHOOL</h1>
+			<div class="linea"></div>
 
-            <nav class="navbar">
-                <img src="assets/img/sinco-erp-blanco.svg" alt="Sinco_Logo" id="Sinco_Logo">
-                <img src="assets/img/teacher.png" alt="teacherIcon" id="teacherIcon">
-                <ul>
-                    <li><a href="" id="Estudiante">Estudiante</a></li>
-                    <li><a href="">Profesor</a></li>
-                    <li><a href=".materia">Materia</a></li>
-                </ul>
-            </nav>
-            <main>
-                <h1>SINCO SCHOOL</h1>
-                <hr>
-                <section class="materia">
-                    <div>
-                        <div class="titulo1"></div>
-                        <div class="titulo2"></div>
-                    </div>
-
-                    <tbody class="registros">
-                        
-                        <tr>
-                            <td><input type="text"></td>
-                            <td><img src="assets/img/trash.png" alt="iconBasura" class="icono"></td>
-                            <td><img src="assets/img/libro.png" alt="iconLibros" class="icono"></td>
-                        </tr>
-                        
-                    </tbody>
-                    <div class="divAgregar">
-                        <input type="text" placeholder="Agregar Materia">
-                        <img src="assets/img/disquete.png" alt="iconGuardar" class="icono">
-                    </div>
-
-                    
-                </section>
-            </main>
-            
-
-        
-
-    
-</body>
-<script src="./assets/js/main.js"></script>
+			<section class="estudiante">
+				<h2 class="titulo-estudiante">Materia</h2>
+				<div class="accionGuardar">
+					<label for="guardarMateria" class="labelMateria">Nombre Materia</label
+					><br />
+					<input type="hidden" id="idMateria">
+					<input
+						type="text"
+						id="nombreMateria"
+						name="guardarMateria"
+						class="guardarMateria"
+					/>
+					<button id="guardarMateria" class="botonGuardarMateria">Guardar</button>
+					<button id="limpiar">Limpiar</button>
+				</div>
+				<div class="contenedorTablaMateria">
+					<table class="tablaMateria">
+						<thead class="theadMateria">
+							<tr>
+                                <td>Nombre</td>
+                                <td>Acción</td>
+                            </tr>
+						</thead>
+                        <tbody class="tbodyMateria">
+                            <tr>
+                                <td>JavaScript</td>
+                                <td></td>
+                            </tr>
+                        </tbody>
+					</table>
+				</div>
+			</section>
+		</main>
+	</body>
+	<script src="assets/js/materias.js"></script>
 </html>
