@@ -15,14 +15,7 @@ body {
 	align-items: center;
 }
 
-a {
-	text-decoration: none;
-	font-style: normal;
-	font-weight: bold;
-	font-size: 36px;
-	line-height: 42px;
-	color: #029bff;
-}
+
 
 h1 {
 	font-style: normal;
@@ -35,9 +28,10 @@ h1 {
 
 main {
 	position: absolute;
-	left: 30%;
+	  margin-left: 27%;
 	top: 5%;
 	width: 65%;
+
 }
 
 .linea {
@@ -59,13 +53,11 @@ main {
 	height: 100px;
 }
 
-.spanboton {
-	font-size: 2.5vw;
-}
+
 
 .botonNav {
 	list-style: none;
-	margin-top: 50px;
+	margin-top: 20%;
 	border-radius: 20px;
 	padding: 5px 30px;
 	display: flex;
@@ -80,15 +72,15 @@ main {
 	color: #fff;
 	transition: all 0.3s;
 }
-.botonEstudiante {
+.botonAlumno {
 	margin-bottom: 0px;
 	cursor: pointer;
 }
-.botonEstudiante:hover {
-	margin-bottom: 65%;
+.botonAlumno:hover {
+	margin-bottom:100%;
 }
 ul {
-	margin-block: 0;
+	
 	padding-inline-start: 0px;
 }
 .subMenu {
@@ -99,13 +91,44 @@ ul {
 	margin-top: 22.2%;
 	border: 1px solid #029bff;
 }
-.subSpan {
-	display: block;
-	padding: 5% 20px;
-	color: #029bff;
-	border-bottom: 1px solid #029bff;
-	font-size: 1.2vw;
+.subOption{
+  display: block;
+  padding: 5% 5px;
+  color: #029bff;
+  border-bottom: 1px solid #029bff;
+  font-size: 1.9vw;
+  text-decoration: none;
+  font-style: normal;
+  font-weight: bold;
+  text-align: center;
 }
+.subOption:hover{
+  color: #fff;
+  font-size: 2vw;
+  background-color: rgb(0, 0, 0);
+
+}
+/*welcome section*/
+section#welcome {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+section#welcome h3 {
+  font-size: 40px;
+  font-weight: 700;
+  transition: ease-in 0.2s;
+}
+section#welcome p {
+  font-family: "Cedarville Cursive", cursive;
+  font-weight: 500;
+  font-size: 30px;
+  width: 85%;
+}
+.hidden {
+  display: none;}
+
 .botonNav:hover .subMenu {
 	display: block;
 }
@@ -169,8 +192,8 @@ ul {
 	border: 1px solid #32a1ce;
 }
 
-/* seccion estudiantes */
-.SectionEstudiantes {
+/* seccion Alumnos */
+.gestionarAlumnos {
 	margin-top: 25px;
 	width: 100%;
 	height: auto;

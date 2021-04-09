@@ -1,21 +1,30 @@
+const options = Array.from(document.querySelectorAll('a'));
+const sections = Array.from(document.querySelectorAll('section'));
+const seccionprofesores= document.getElementById("profesor");
+const seccionmaterias = document.getElementById("materia")
+const welcome = document.getElementById('welcome');
+const materia = document.getElementById('materia');
+const profesor = document.getElementById('profesor');
 
-const estudiante = document.querySelector(".materia");
-const titulo1 = document.querySelector(".titulo1");
-const titulo2 = document.querySelector(".titulo2");
-var tabla = document.getElementById('registros')
+const gestionarAlumnos = document.querySelector('.gestionarAlumnos');
+const asignarNotas = document.querySelector('.asignarNotas');
+const verReporte = document.querySelector('.verReporte');
+const gestionarProfesor = document.querySelector('.gestionarProfesor');
+const asignarMateriaProfesor = document.querySelector('.asignarMateriaProfesor');
 
 
+options.forEach((option) => {
+    option.addEventListener('click',()=>{
+        welcome.classList.add('hidden');
+            sections.forEach(section => {  
+                    if(section.classList.contains(`${option.id}`)){
+                        section.classList.toggle('hidden');
+                    }else{
+                        section.classList.add('hidden');
+                    }
+                })
+        })
+})
 
-titulo1.innerHTML = "MATERIA";
-//titulo2.innerHTML = "Nombre de la Materia";
 
-
-
-
-/*
-for (let i = 0; i < materia.length; i++) {
     
-    tabla.insertRow(i-1).innerHTML =  <input type="text"></input> ;
-    
-}
-*/
