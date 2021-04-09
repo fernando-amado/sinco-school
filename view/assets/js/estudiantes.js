@@ -1,4 +1,4 @@
-const tabla= document.querySelector(".tablaAlumno")
+const tablaAlumno= document.querySelector(".tablaAlumno")
 const tbody = document.getElementById("lista");
 const btnGuardarAlumno = document.getElementById("guardarAlumno");
 const NombreAlumno= document.getElementById("nombreAlumno");
@@ -33,7 +33,7 @@ function llenarTablaAlumno(a){
     <td><button class="btnEditarMateria" onclick="AbrirEditarAlumno(${a.IdAlumno},'${a.Nombre}','${a.Apellido}',${a.EstadoAlumno})">Editar</button>
     <button class="btnEliminarMateria" onclick="EliminarAlumno(${a.IdAlumno})">Eliminar</button></td>`;
     nAlumno.setAttribute("data-id",a.IdAlumno)
-    tabla.appendChild(nAlumno);
+    tablaAlumno.appendChild(nAlumno);
 }
 
 function AgregarEstudiante(nombre,apellido,estado){
@@ -94,7 +94,7 @@ function EliminarAlumno(id){
         })
     }).then(()=>{
         let tr=document.querySelector(`tr[data-id="${id}"]`)
-        tabla.removeChild(tr);
+        tablaAlumno.removeChild(tr);
     })
 }
 
