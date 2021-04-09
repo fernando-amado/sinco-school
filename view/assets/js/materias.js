@@ -1,4 +1,4 @@
-const tabla= document.querySelector(".tablaMateria")
+const tabla = document.querySelector(".tbodyMateria");
 const tbody = document.getElementById("lista");
 const boton = document.getElementById("guardarMateria");
 const inputNombre= document.getElementById("nombreMateria");
@@ -37,11 +37,13 @@ function listarMateria(){
 
 function llenarTabla(m){
     let nMateria= document.createElement('tr');
-    nMateria.innerText =m.Name;
+    
+    nMateria.innerHTML +='<td>'+m.Name+'</td>';
     nMateria.setAttribute("data-id",m.IdMateria)
-    nMateria.innerHTML+=`<button class="btnEditarMateria" onclick="AbrirEditar(${m.IdMateria},'${m.Name}')">Editar</button>`
-    nMateria.innerHTML+=`<button class="btnEliminarMateria" onclick="Eliminar(${m.IdMateria})">Eliminar</button>`
+    nMateria.innerHTML += `<td class="tdBoton "><i class="btnEditar far fa-edit"onclick="AbrirEditar(${m.IdMateria},'${m.Name}')"></i>
+    <i class=" fas fa-trash-alt btnEliminar" onclick="Eliminar(${m.IdMateria})"></i></td>`;
     tabla.appendChild(nMateria);
+    inputNombre.value="";
 }
 
 function Agregar(m){
@@ -55,7 +57,7 @@ function Agregar(m){
             Name: m
         })
     }).then(response=> response.json())
-    .then(data=>llenarTabla(data))
+    .then(data=>llenarTabla(data) )
 }
 
 function AbrirEditar(id, nombre){
@@ -76,8 +78,8 @@ function Editar (id,nombre){
         })
     }).then(()=>{
         let tr=document.querySelector(`tr[data-id="${id}"]`)
-        tr.innerHTML=`${nombre} <button onclick="AbrirEditar(${id},'${nombre}')">Editar</button>`
-        tr.innerHTML+=`<button onclick="Eliminar(${id})">Eliminar</button>`
+        tr.innerHTML=`<td>${nombre} <button onclick="AbrirEditar(${id},'${nombre}')">Editar</button>
+        <button onclick="Eliminar(${id})">Eliminar</button></td>`
     })
 }
 

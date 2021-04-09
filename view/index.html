@@ -6,6 +6,10 @@
 		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 		<title>Sinco School</title>
 		<link rel="stylesheet" href="./assets/estilos/style.css" />
+		<script
+			src="https://use.fontawesome.com/releases/v5.15.3/js/all.js"
+			data-auto-a11y="true"
+		></script>
 	</head>
 	<body>
 		<nav class="navbar">
@@ -44,7 +48,69 @@
 			<h1>SINCO SCHOOL</h1>
 			<div class="linea"></div>
 
-			<section class="estudiante">
+			<section class="SectionEstudiantes">
+				<div class="header">
+				<h2 class="titulos">Estudiantes</h2>
+				<button class="boton asignar asignarEstudiantes" >Agregar Estudiantes</button>
+				</div>
+				
+				<div class="contenedorTablaEstudiantes">
+					<table class="tablaEstudiantes">
+						<thead class="theadMateria">
+							<tr>
+                                <td>Nombres</td>
+                                <td>Apellidos</td>
+								<td>Estado</td>
+								<td>Acción</td>
+                            </tr>
+						</thead>
+                        <tbody class="tbody tbodyEstudiantes">
+                            <tr>
+								<td>Fernando</td>
+								<td>Amado lopez</td>
+								<td>Activo</td>
+								<td class="tdBoton ">
+								<i class="btnEditar far fa-edit" onclick="editar(event)"></i>
+   								<i class=" fas fa-trash-alt btnEliminar"></i></td>
+							</tr>
+                        </tbody>
+					</table>
+				</div>
+				<aside class="ventana-modal">
+			<div class="modal modalClose">
+				<header class="cabeza-modal">
+					<h1 class="titulo-modal">Agregar Estudiante</h1>
+					<div class="cerrar">
+						<p class="x">X</p>
+					</div>
+				</header>			
+				<form action="" class="formulario">
+					<div class="inputs">
+						<div class="grupo">				
+							<label for="nombreEstudiante">Nombres del Estudiante</label>					
+							<input name="nombreEstudiante" placeholder="Ingrese los nombres del estudiante">	
+						</div>
+						<div class="grupo">
+							<label for="apellidoEstudiante">Apellidos del Estudiante</label>
+							<input name="apellidoEstudiante" id="apellidoEstudiante" placeholder="ingrese los apellidos del estudiante">
+						</div>
+						<div class="grupo">			
+							<label for="estadoEstudiante">Estado del Estudiante</label>
+							<select name="estadoEstudiante" id="estadoEstudiante" class="select">
+								<option value="">Seleccione un estado</option>
+								<option value="1">Activo</option>
+								<option value="0">Inactivo</option>					
+							</select>
+						</div>         
+					<div class="contenedor-botones">
+						<button type="reset" class="resetear botones">Resetar</button>
+						<button type="submit" class="guardar botones">Guardar</button>
+					</div>
+				</form>
+			</div>
+		</aside>
+			</section>
+			<section class="SectionMateria">
 				<h2 class="titulo-estudiante">Materia</h2>
 				<div class="accionGuardar">
 					<label for="guardarMateria" class="labelMateria">Nombre Materia</label
@@ -56,22 +122,20 @@
 						name="guardarMateria"
 						class="guardarMateria"
 					/>
-					<button id="guardarMateria" class="botonGuardarMateria">Guardar</button>
-					<button id="limpiar">Limpiar</button>
+					<button id="limpiar"  class="botonLimpiar boton ">Limpiar</button>
+					<button id="guardarMateria" class="boton btnGuardarMateria">Guardar</button>
+					
 				</div>
 				<div class="contenedorTablaMateria">
 					<table class="tablaMateria">
 						<thead class="theadMateria">
 							<tr>
-                                <td>Nombre</td>
+                                <td>Nombre de la materia</td>
                                 <td>Acción</td>
                             </tr>
 						</thead>
-                        <tbody class="tbodyMateria">
-                            <tr>
-                                <td>JavaScript</td>
-                                <td></td>
-                            </tr>
+                        <tbody class="tbody tbodyMateria">
+                            
                         </tbody>
 					</table>
 				</div>
@@ -79,4 +143,5 @@
 		</main>
 	</body>
 	<script src="assets/js/materias.js"></script>
+	<script src="./assets/js/modal.js"></script>
 </html>
