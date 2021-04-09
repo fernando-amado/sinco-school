@@ -1,7 +1,11 @@
-let abrirModal=document.querySelector('.boton')
+let abrirModal = document.querySelector(".asignarEstudiantes");
 let cerrar = document.querySelector(".cerrar");
 let modal = document.querySelector(".modal");
 let ventanaModal = document.querySelector(".ventana-modal");
+
+
+let guardar = document.querySelector(".guardar");
+let opcion = 0;
 
 abrirModal.addEventListener("click", function (e) {
 	e.preventDefault();
@@ -10,4 +14,31 @@ abrirModal.addEventListener("click", function (e) {
 	modal.classList.toggle("modalClose");
 	
 });
+cerrar.addEventListener("click", cerrarModal);
+function cerrarModal(e) {
+	e.preventDefault();
+	modal.classList.toggle("modalClose");
+	setTimeout(function () {
+		ventanaModal.style.opacity = "0";
+		ventanaModal.style.visibility = "hidden";
+	}, 800);
+}
+window.addEventListener("click", function (e) {
+	e.preventDefault();
 
+	if (e.target == ventanaModal) {
+		modal.classList.toggle("modalClose");
+		setTimeout(function () {
+			ventanaModal.style.opacity = "0";
+			ventanaModal.style.visibility = "hidden";
+		}, 800);
+	}
+});
+function editar(e) {
+	e.preventDefault();
+	document.querySelector(".titulo-modal").innerHTML = "Editar persona";
+	ventanaModal.style.opacity = "1";
+	ventanaModal.style.visibility = "visible";
+	modal.classList.toggle("modalClose");
+	opcion = 2;
+}
