@@ -1,82 +1,137 @@
 <!DOCTYPE html>
 <html lang="en">
-	<head>
-		<meta charset="UTF-8" />
-		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
-		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-		<title>Sinco School</title>
-		<link rel="stylesheet" href="./assets/estilos/style.css" />
-	</head>
-	<body>
-		<nav class="navbar">
-			<img
-				src="assets/img/sinco-erp-blanco.svg"
-				alt="Sinco_Logo"
-				class="Sinco_Logo"
-			/>
-			<img src="assets/img/teacher.png" alt="teacherIcon" id="teacherIcon" />
-			<ul class="ul-Navegacion">
-				<li class="botonNav botonEstudiante">
-					<span class="spanboton">Estudiante</span>
-					<ul class="subMenu">
-						<li class="subLi">
-							<span class="subSpan"> Gestionar Estudiantes </span>
-						</li>
-						<li class="subLi"><span class="subSpan"> Asignar Notas</span></li>
-						<li class="subLi"><span class="subSpan"> Ver Reporte</span></li>
-					</ul>
-				</li>
-				<li class="botonNav"><span class="spanboton"> Materia</span></li>
-				<li class="botonNav">
-					<span class="spanboton">Profesor</span>
-					<ul class="subMenu">
-						<li class="subLi">
-							<span class="subSpan"> Gestionar Profesores </span>
-						</li>
-						<li class="subLi">
-							<span class="subSpan"> Asignar Materias</span>
-						</li>
-					</ul>
-				</li>
-			</ul>
-		</nav>
-		<main>
-			<h1>SINCO SCHOOL</h1>
-			<div class="linea"></div>
 
-			<section class="estudiante">
-				<h2 class="titulo-estudiante">Materia</h2>
-				<div class="accionGuardar">
-					<label for="guardarMateria" class="labelMateria">Nombre Materia</label
-					><br />
-					<input type="hidden" id="idMateria">
-					<input
-						type="text"
-						id="nombreMateria"
-						name="guardarMateria"
-						class="guardarMateria"
-					/>
-					<button id="guardarMateria" class="botonGuardarMateria">Guardar</button>
-					<button id="limpiar">Limpiar</button>
-				</div>
-				<div class="contenedorTablaMateria">
-					<table class="tablaMateria">
-						<thead class="theadMateria">
-							<tr>
-                                <td>Nombre</td>
-                                <td>Acción</td>
-                            </tr>
-						</thead>
-                        <tbody class="tbodyMateria">
-                            <tr>
-                                <td>JavaScript</td>
-                                <td></td>
-                            </tr>
-                        </tbody>
-					</table>
-				</div>
-			</section>
-		</main>
-	</body>
-	<script src="assets/js/materias.js"></script>
+<head>
+	<meta charset="UTF-8" />
+	<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+	<title>Sinco School</title>
+	<link rel="stylesheet" href="./assets/estilos/style.css" />
+	<link rel="preconnect" href="https://fonts.gstatic.com">
+<link href="https://fonts.googleapis.com/css2?family=Cedarville+Cursive" rel="stylesheet">
+</head>
+
+<body>
+	<nav class="navbar">
+		<img src="assets/img/sinco-erp-blanco.svg" alt="Sinco_Logo" class="Sinco_Logo" />
+		<img src="assets/img/teacher.png" alt="teacherIcon" id="teacherIcon" />
+		<ul class="ul-Navegacion">
+					<li class="botonNav botonEstudiante">
+						<span class="aboton">Estudiante</span>
+						<ul class="subMenu">
+									<li class="subLi">
+										<a id="gestionarAlumnos" class="subOption"> Gestionar Alumnos </a>
+									</li>
+									<li class="subLi">
+										<a id="asignarNotas" class="subOption"> Asignar Notas</a>
+									</li>
+									<li class="subLi">
+										<a id="verReporte" class="subOption"> Ver Reporte</a>
+									</li>
+								</li>
+						</ul>
+					<li class="botonNav">
+						<a id="materia" class="aboton"> Materia</a>
+					</li>
+
+					<li class="botonNav">
+						<span class="aboton">Profesor</span>
+								<ul class="subMenu">
+									<li class="subLi">
+										<a id="gestionarProfesor" class="subOption"> Gestionar Profesores</a>
+									</li>
+									<li class="subLi">
+										<a id="asignarMateriaProfesor" class="subOption"> Asignar Materias</a>
+									</li>
+								</ul>
+					</li>
+		</ul>
+	</nav>
+	<main>
+		<h1>SINCO SCHOOL</h1>
+		<div class="linea"></div>
+		
+		<article id="welcome">
+			<h3> BIENVENIDOS A SINCOSCHOOL </h3>
+        <p>
+                una Secilla y Minimilistica Herramienta para gestionar tu Escuela Virtual
+        </p>
+        <h3> Selecciona una opción Del Menu </h3>
+	</article>
+
+		<section class="gestionarAlumnos hidden">
+			<h1>gestionar alumnos section</h1>
+		</section>
+
+		<section class="asignarNotas hidden">
+			<h1>Asignar notas section</h1>
+		</section>
+
+		<section class="verReporte hidden">
+			<h1>Ver Reporte section</h1>
+		</section>
+
+		<section class="materia hidden" >
+			<h2 class="titulo-estudiante">Materia</h2>
+			<div class="accionGuardar">
+				<label for="guardarMateria" class="labelMateria">Nombre Materia</label><br />
+				<input type="hidden" id="idMateria">
+				<input type="text" id="nombreMateria" name="guardarMateria" class="guardarMateria" />
+				<button id="guardarMateria" class="botonGuardarMateria">Guardar</button>
+				<button id="limpiar">Limpiar</button>
+			</div>
+			<div class="contenedorTablaMateria">
+				<table class="tablaMateria">
+					<thead class="theadMateria">
+						<tr>
+							<td>Nombre</td>
+							<td>Acción</td>
+						</tr>
+					</thead>
+					<tbody class="tbodyMateria">
+						<tr>
+							<td></td>
+						</tr>
+					</tbody>
+				</table>
+			</div>
+		</section>
+
+		<section  class="gestionarProfesor hidden">
+			<h2 class="titulo-estudiante">Gestionar Profesor</h2>
+			<aside class="accionGuardar">
+				<label for="guardarProfesor" class="labelProfesor">Nombre Profesor</label><br />
+				<input type="hidden" id="idProfesor">
+				<input type="text" id="nombreProfesor" name="guardarProfesor" class="guardarProfesor" />
+				<button id="guardarProfesor" class="botonGuardarProfesor">Guardar</button>
+				<button id="limpiar">Limpiar</button>
+			</aside>
+			<aside class="contenedorTablaProfesor">
+				<table class="tablaProfesor">
+					<thead class="theadProfesor">
+						<tr>
+							<td>Nombre</td>
+							<td>Apellido</td>
+							<td>Estado</td>
+							<td>Acción</td>
+						</tr>
+					</thead>
+					<tbody class="tbodyProfesor">
+						<tr>
+							<td></td>
+						</tr>
+					</tbody>
+				</table>
+			</aside>
+		</section>
+
+		<section class="asignarMateriaProfesor hidden">
+			<h1>aqui va modal</h1>
+		</section>
+
+	</main>
+</body>
+<script src="assets/js/materias.js"></script>
+<script src="assets/js/main.js"></script>
+
 </html>
