@@ -57,7 +57,8 @@ function Agregar(m){
             Name: m
         })
     }).then(response=> response.json())
-    .then(data=>llenarTabla(data) )
+    .then(data=>llenarTabla(data) ),cerrarModal(event),
+			limpiarDatos();
 }
 
 function AbrirEditar(id, nombre){
@@ -80,7 +81,8 @@ function Editar (id,nombre){
         let tr=document.querySelector(`tr[data-id="${id}"]`)
         tr.innerHTML=`<td>${nombre} <button onclick="AbrirEditar(${id},'${nombre}')">Editar</button>
         <button onclick="Eliminar(${id})">Eliminar</button></td>`
-    })
+    }),cerrarModal(event),
+			limpiarDatos();
 }
 
 function Eliminar(id){

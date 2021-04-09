@@ -15,6 +15,9 @@ btnGuardarAlumno.addEventListener("click",()=>{
         AgregarEstudiante(NombreAlumno.value,ApellidoAlumno.value,estadoAlumno.value)
       }
 })
+function limpiarDatos(){
+    document.querySelector('.formulario').reset()
+}
 
 
 function listarAlumno(){
@@ -55,7 +58,7 @@ function AgregarEstudiante(nombre,apellido,estado){
             EstadoAlumno: parseInt(estado)
         })
     }).then(response=> response.json())
-    .then(data=>llenarTablaAlumno(data),cerrarModal(event))
+    .then(data=>llenarTablaAlumno(data),cerrarModal(event),limpiarDatos())
 }
 
 function AbrirEditarAlumno(id,nombre,apellido,estado){
@@ -67,26 +70,28 @@ function AbrirEditarAlumno(id,nombre,apellido,estado){
 }
 
 function EditarAlumno(id,nombre,apellido,estado){
-    fetch("https://localhost:44379/api/Alumnos/"+id, {
-        headers: {
-            'Accept': 'application/json',
-            'Content-Type': 'application/json'
-          },
-        method :"PUT",
-        body: JSON.stringify({
-            IdAlumno:id,
-            Nombre: nombre,
-            Apellido:apellido,
-            EstadoAlumno: parseInt(estado)
-        })
-    }).then(()=>{
-        let tr=document.querySelector(`tr[data-id="${id}"]`)
-        tr.innerHTML = `<td>${nombre}</td>
+    fetch("https://localhost:44379/api/Alumnos/" + id, {
+			headers: {
+				Accept: "application/json",
+				"Content-Type": "application/json"
+			},
+			method: "PUT",
+			body: JSON.stringify({
+				IdAlumno: id,
+				Nombre: nombre,
+				Apellido: apellido,
+				EstadoAlumno: parseInt(estado)
+			})
+		}).then(() => {
+			let tr = document.querySelector(`tr[data-id="${id}"]`);
+			tr.innerHTML = `<td>${nombre}</td>
         <td>${apellido}</td>
-        <td>${estado==1 ? "Activo" : "Inactivo"}</td>
+        <td>${estado == 1 ? "Activo" : "Inactivo"}</td>
         <td><i class="btnEditar far fa-edit" onclick="AbrirEditarAlumno(${id},'${nombre}','${apellido}',${estado})"></i>
         <i class="fas fa-trash-alt btnEliminar" onclick="EliminarAlumno(${id})"></i></td>`;
-    }),cerrarModal(event)
+		}),
+			cerrarModal(event),
+			limpiarDatos();
 }
 
 function EliminarAlumno(id){
