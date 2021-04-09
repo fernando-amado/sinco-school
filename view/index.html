@@ -67,7 +67,7 @@
 				</div>
 				
 				<div class="contenedorTablaAlumno">
-					<table class="tablaAlumno">
+					<table class="tabla">
 						<thead class="theadMateria">
 							<tr>
                                 <td>Nombres</td>
@@ -77,14 +77,7 @@
                             </tr>
 						</thead>
                         <tbody class="tbody tbodyAlumno">
-                            <tr>
-								<td>Fernando</td>
-								<td>Amado lopez</td>
-								<td>Activo</td>
-								<td class="tdBoton ">
-								<i class="btnEditar far fa-edit" onclick="editar(event)"></i>
-   								<i class=" fas fa-trash-alt btnEliminar"></i></td>
-							</tr>
+                           
                         </tbody>
 					</table>
 				</div>
@@ -98,9 +91,10 @@
 				</header>			
 				<form action="" class="formulario">
 					<div class="inputs">
-						<div class="grupo">				
+						<div class="grupo">		
+							<input type="hidden" id="idAlumno">		
 							<label for="nombreAlumno">Nombres del Alumno</label>					
-							<input name="nombreAlumno" placeholder="Ingrese los nombres del Alumno">	
+							<input name="nombreAlumno" id="nombreAlumno" placeholder="Ingrese los nombres del Alumno">	
 						</div>
 						<div class="grupo">
 							<label for="apellidoAlumno">Apellidos del Alumno</label>
@@ -116,7 +110,7 @@
 						</div>         
 					<div class="contenedor-botones">
 						<button type="reset" class="resetear botones">Resetar</button>
-						<button type="submit" class="guardar botones">Guardar</button>
+						<button type="submit" id="guardarAlumno" class="guardar botones ">Guardar</button>
 					</div>
 				</form>
 			</div>
@@ -135,11 +129,11 @@
 						class="guardarMateria"
 					/>
 					<button id="limpiar"  class="botonLimpiar boton ">Limpiar</button>
-					<button id="guardarMateria" class="boton btnGuardarMateria">Guardar</button>
+					<button type="submit" id="guardarMateria" class="boton btnGuardarMateria">Guardar</button>
 					
 				</div>
 				<div class="contenedorTablaMateria">
-					<table class="tablaMateria">
+					<table class="tabla">
 						<thead class="theadMateria">
 							<tr>
                                 <td>Nombre de la materia</td>
@@ -191,7 +185,9 @@
 		</section>
 		</main>
 	</body>
-	<script src="assets/js/materias.js"></script>
 	<script src="assets/js/modal.js"></script>
+	<script src="./assets/js/estudiantes.js"></script>
+	<script src="assets/js/materias.js"></script>
+	
 	<script src="./assets/js/main.js"></script>
 </html>

@@ -59,13 +59,14 @@ main {
 	list-style: none;
 	margin-top: 20%;
 	border-radius: 20px;
-	padding: 5px 30px;
+	padding: 5px 50px;
 	display: flex;
 	justify-content: center;
 	border: 2px solid #029bff;
 	color: #029bff;
 	position: relative;
 	cursor: pointer;
+	font-size: 1.5vw;
 }
 .botonNav:hover {
 	border: 2px solid #fff;
@@ -77,7 +78,7 @@ main {
 	cursor: pointer;
 }
 .botonAlumno:hover {
-	margin-bottom:100%;
+	margin-bottom:60%;
 }
 ul {
 	
@@ -88,7 +89,7 @@ ul {
 	list-style: none;
 	position: absolute;
 	display: none;
-	margin-top: 22.2%;
+	margin-top: 28px;
 	border: 1px solid #029bff;
 }
 .subOption{
@@ -96,7 +97,7 @@ ul {
   padding: 5% 5px;
   color: #029bff;
   border-bottom: 1px solid #029bff;
-  font-size: 1.9vw;
+  font-size: 1vw;
   text-decoration: none;
   font-style: normal;
   font-weight: bold;
@@ -104,7 +105,7 @@ ul {
 }
 .subOption:hover{
   color: #fff;
-  font-size: 2vw;
+  font-size: 1.1vw;
   background-color: rgb(0, 0, 0);
 
 }
@@ -193,11 +194,15 @@ section#welcome p {
 }
 
 /* seccion Alumnos */
-.gestionarAlumnos {
+section .gestionarAlumnos {
 	margin-top: 25px;
 	width: 100%;
 	height: auto;
-	display: block;
+	display:flex;
+	flex-direction: column;
+	justify-content:center;
+	
+
 }
 /*tabla*/
 table {
@@ -210,8 +215,8 @@ table {
 	margin-bottom: 50px;
 	font-size: 1.5em;
 }
-.tablaMateria {
-	width: 65%;
+.tabla {
+	width: 95%;
 }
 
 th,
@@ -252,11 +257,14 @@ tr:nth-child(even) {
 	cursor: pointer;
 }
 
-.materia {
-	position: absolute;
+section .materia  {
+	
 	width: 471px;
 	height: 479px;
 	top: 160px;
+	display:flex;
+	flex-direction: column;
+	justify-content:center;
 }
 
 .titulo1 {
@@ -400,6 +408,7 @@ input {
 	outline: none;
 	width:20%;
 	border:none;
+	cursor: pointer;
 	
 }
 

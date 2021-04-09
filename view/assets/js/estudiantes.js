@@ -1,9 +1,9 @@
-const tablaAlumno= document.querySelector(".tablaAlumno")
-const tbody = document.getElementById("lista");
+const tablaAlumno = document.querySelector(".tbodyAlumno");
+
 const btnGuardarAlumno = document.getElementById("guardarAlumno");
 const NombreAlumno= document.getElementById("nombreAlumno");
 const ApellidoAlumno= document.getElementById("apellidoAlumno");
-const estadoAlumno= document.getElementById("estadoAlumno")
+const estadoAlumno = document.getElementById("estadoAlumno");
 const idAlumno= document.getElementById("idAlumno");
 const btnlimpiarAlumno= document.getElementById("limpiar");
 
@@ -27,11 +27,17 @@ function listarAlumno(){
 
 function llenarTablaAlumno(a){
     let nAlumno= document.createElement('tr');
-    nAlumno.innerHTML +=`<td>${a.Nombre}</td>
+    nAlumno.innerHTML += `<td>${a.Nombre}</td>
     <td>${a.Apellido}</td>
-    <td>${(a.EstadoAlumno)? "Activo": "Inactivo" }</td>
-    <td><button class="btnEditarMateria" onclick="AbrirEditarAlumno(${a.IdAlumno},'${a.Nombre}','${a.Apellido}',${a.EstadoAlumno})">Editar</button>
-    <button class="btnEliminarMateria" onclick="EliminarAlumno(${a.IdAlumno})">Eliminar</button></td>`;
+    <td>${a.EstadoAlumno ? "Activo" : "Inactivo"}</td>
+    <td><i class="btnEditar far fa-edit" onclick="AbrirEditarAlumno(${
+			a.IdAlumno
+		},'${a.Nombre}','${a.Apellido}',${
+			a.EstadoAlumno == "Activo" ? 1 : 0
+		})"></i>
+    <i class="fas fa-trash-alt btnEliminar" onclick="EliminarAlumno(${
+			a.IdAlumno
+		})"></i></td>`;
     nAlumno.setAttribute("data-id",a.IdAlumno)
     tablaAlumno.appendChild(nAlumno);
 }
@@ -49,14 +55,15 @@ function AgregarEstudiante(nombre,apellido,estado){
             EstadoAlumno: parseInt(estado)
         })
     }).then(response=> response.json())
-    .then(data=>llenarTablaAlumno(data))
+    .then(data=>llenarTablaAlumno(data),cerrarModal(event))
 }
 
 function AbrirEditarAlumno(id,nombre,apellido,estado){
+    editar(event);
     idAlumno.value=id;
     NombreAlumno.value= nombre;
     ApellidoAlumno.value= apellido;
-    estadoAlumno.value= estado;
+    estadoAlumno.value = estado;
 }
 
 function EditarAlumno(id,nombre,apellido,estado){
@@ -74,12 +81,12 @@ function EditarAlumno(id,nombre,apellido,estado){
         })
     }).then(()=>{
         let tr=document.querySelector(`tr[data-id="${id}"]`)
-        tr.innerHTML=`<td>${nombre}</td>
+        tr.innerHTML = `<td>${nombre}</td>
         <td>${apellido}</td>
-        <td>${(estado)? "Activo": "Inactivo" }</td>
-        <td><button class="btnEditarMateria" onclick="AbrirEditarAlumno(${id},'${nombre}','${apellido}',${estado})">Editar</button>
-        <button class="btnEliminarMateria" onclick="EliminarAlumno(${id})">Eliminar</button></td>`
-    })
+        <td>${estado==1 ? "Activo" : "Inactivo"}</td>
+        <td><i class="btnEditar far fa-edit" onclick="AbrirEditarAlumno(${id},'${nombre}','${apellido}',${estado})"></i>
+        <i class="fas fa-trash-alt btnEliminar" onclick="EliminarAlumno(${id})"></i></td>`;
+    }),cerrarModal(event)
 }
 
 function EliminarAlumno(id){
