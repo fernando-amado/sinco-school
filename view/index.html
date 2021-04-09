@@ -6,6 +6,9 @@
 		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 		<title>Sinco School</title>
 		<link rel="stylesheet" href="./assets/estilos/style.css" />
+		<link rel="preconnect" href="https://fonts.gstatic.com">
+<link href="https://fonts.googleapis.com/css2?family=Cedarville+Cursive" rel="stylesheet">
+
 		<script
 			src="https://use.fontawesome.com/releases/v5.15.3/js/all.js"
 			data-auto-a11y="true"
@@ -13,155 +16,11 @@
 	</head>
 	<body>
 		<nav class="navbar">
-			<img
-				src="assets/img/sinco-erp-blanco.svg"
-				alt="Sinco_Logo"
-				class="Sinco_Logo"
-			/>
-			<img src="assets/img/teacher.png" alt="teacherIcon" id="teacherIcon" />
-			<ul class="ul-Navegacion">
-				<li class="botonNav botonEstudiante">
-					<span class="spanboton">Estudiante</span>
-					<ul class="subMenu">
-						<li class="subLi">
-							<span class="subSpan"> Gestionar Estudiantes </span>
-						</li>
-						<li class="subLi"><span class="subSpan"> Asignar Notas</span></li>
-						<li class="subLi"><span class="subSpan"> Ver Reporte</span></li>
-					</ul>
-				</li>
-				<li class="botonNav"><span class="spanboton"> Materia</span></li>
-				<li class="botonNav">
-					<span class="spanboton">Profesor</span>
-					<ul class="subMenu">
-						<li class="subLi">
-							<span class="subSpan"> Gestionar Profesores </span>
-						</li>
-						<li class="subLi">
-							<span class="subSpan"> Asignar Materias</span>
-						</li>
-					</ul>
-				</li>
-			</ul>
-		</nav>
-		<main>
-			<h1>SINCO SCHOOL</h1>
-			<div class="linea"></div>
-
-			<section class="SectionEstudiantes">
-				<div class="header">
-				<h2 class="titulos">Estudiantes</h2>
-				<button class="boton asignar asignarEstudiantes" >Agregar Estudiantes</button>
-				</div>
-				
-				<div class="contenedorTablaEstudiantes">
-					<table class="tablaEstudiantes">
-						<thead class="theadMateria">
-							<tr>
-                                <td>Nombres</td>
-                                <td>Apellidos</td>
-								<td>Estado</td>
-								<td>Acción</td>
-                            </tr>
-						</thead>
-                        <tbody class="tbody tbodyEstudiantes">
-                            <tr>
-								<td>Fernando</td>
-								<td>Amado lopez</td>
-								<td>Activo</td>
-								<td class="tdBoton ">
-								<i class="btnEditar far fa-edit" onclick="editar(event)"></i>
-   								<i class=" fas fa-trash-alt btnEliminar"></i></td>
-							</tr>
-                        </tbody>
-					</table>
-				</div>
-				<aside class="ventana-modal">
-			<div class="modal modalClose">
-				<header class="cabeza-modal">
-					<h1 class="titulo-modal">Agregar Estudiante</h1>
-					<div class="cerrar">
-						<p class="x">X</p>
-					</div>
-				</header>			
-				<form action="" class="formulario">
-					<div class="inputs">
-						<div class="grupo">				
-							<label for="nombreEstudiante">Nombres del Estudiante</label>					
-							<input name="nombreEstudiante" placeholder="Ingrese los nombres del estudiante">	
-						</div>
-						<div class="grupo">
-							<label for="apellidoEstudiante">Apellidos del Estudiante</label>
-							<input name="apellidoEstudiante" id="apellidoEstudiante" placeholder="ingrese los apellidos del estudiante">
-						</div>
-						<div class="grupo">			
-							<label for="estadoEstudiante">Estado del Estudiante</label>
-							<select name="estadoEstudiante" id="estadoEstudiante" class="select">
-								<option value="">Seleccione un estado</option>
-								<option value="1">Activo</option>
-								<option value="0">Inactivo</option>					
-							</select>
-						</div>         
-					<div class="contenedor-botones">
-						<button type="reset" class="resetear botones">Resetar</button>
-						<button type="submit" class="guardar botones">Guardar</button>
-					</div>
-				</form>
-			</div>
-		</aside>
-			</section>
-			<section class="SectionMateria">
-				<h2 class="titulo-estudiante">Materia</h2>
-				<div class="accionGuardar">
-					<label for="guardarMateria" class="labelMateria">Nombre Materia</label
-					><br />
-					<input type="hidden" id="idMateria">
-					<input
-						type="text"
-						id="nombreMateria"
-						name="guardarMateria"
-						class="guardarMateria"
-					/>
-					<button id="limpiar"  class="botonLimpiar boton ">Limpiar</button>
-					<button id="guardarMateria" class="boton btnGuardarMateria">Guardar</button>
-					
-				</div>
-				<div class="contenedorTablaMateria">
-					<table class="tablaMateria">
-						<thead class="theadMateria">
-							<tr>
-                                <td>Nombre de la materia</td>
-                                <td>Acción</td>
-                            </tr>
-						</thead>
-                        <tbody class="tbody tbodyMateria">
-                            
-                        </tbody>
-					</table>
-				</div>
-			</section>
-		</main>
-	</body>
-	<script src="assets/js/materias.js"></script>
-	<script src="./assets/js/modal.js"></script>
-
-<head>
-	<meta charset="UTF-8" />
-	<meta http-equiv="X-UA-Compatible" content="IE=edge" />
-	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-	<title>Sinco School</title>
-	<link rel="stylesheet" href="./assets/estilos/style.css" />
-	<link rel="preconnect" href="https://fonts.gstatic.com">
-<link href="https://fonts.googleapis.com/css2?family=Cedarville+Cursive" rel="stylesheet">
-</head>
-
-<body>
-	<nav class="navbar">
 		<img src="assets/img/sinco-erp-blanco.svg" alt="Sinco_Logo" class="Sinco_Logo" />
 		<img src="assets/img/teacher.png" alt="teacherIcon" id="teacherIcon" />
 		<ul class="ul-Navegacion">
-					<li class="botonNav botonEstudiante">
-						<span class="aboton">Estudiante</span>
+					<li class="botonNav botonAlumno">
+						<span class="aboton">Alumno</span>
 						<ul class="subMenu">
 									<li class="subLi">
 										<a id="gestionarAlumnos" class="subOption"> Gestionar Alumnos </a>
@@ -191,56 +50,114 @@
 					</li>
 		</ul>
 	</nav>
-	<main>
-		<h1>SINCO SCHOOL</h1>
-		<div class="linea"></div>
-		
-		<article id="welcome">
+		<main>
+			<h1>SINCO SCHOOL</h1>
+			<div class="linea"></div>
+<article id="welcome">
 			<h3> BIENVENIDOS A SINCOSCHOOL </h3>
         <p>
                 una Secilla y Minimilistica Herramienta para gestionar tu Escuela Virtual
         </p>
         <h3> Selecciona una opción Del Menu </h3>
 	</article>
-
-		<section class="gestionarAlumnos hidden">
-			<h1>gestionar alumnos section</h1>
-		</section>
-
-		<section class="asignarNotas hidden">
+			<section class="gestionarAlumnos hidden">
+				<div class="header">
+				<h2 class="titulos">Alumno</h2>
+				<button class="boton asignar asignarAlumno" >Agregar Alumno</button>
+				</div>
+				
+				<div class="contenedorTablaAlumno">
+					<table class="tablaAlumno">
+						<thead class="theadMateria">
+							<tr>
+                                <td>Nombres</td>
+                                <td>Apellidos</td>
+								<td>Estado</td>
+								<td>Acción</td>
+                            </tr>
+						</thead>
+                        <tbody class="tbody tbodyAlumno">
+                            <tr>
+								<td>Fernando</td>
+								<td>Amado lopez</td>
+								<td>Activo</td>
+								<td class="tdBoton ">
+								<i class="btnEditar far fa-edit" onclick="editar(event)"></i>
+   								<i class=" fas fa-trash-alt btnEliminar"></i></td>
+							</tr>
+                        </tbody>
+					</table>
+				</div>
+				<aside class="ventana-modal">
+			<div class="modal modalClose">
+				<header class="cabeza-modal">
+					<h1 class="titulo-modal">Agregar Alumno</h1>
+					<div class="cerrar">
+						<p class="x">X</p>
+					</div>
+				</header>			
+				<form action="" class="formulario">
+					<div class="inputs">
+						<div class="grupo">				
+							<label for="nombreAlumno">Nombres del Alumno</label>					
+							<input name="nombreAlumno" placeholder="Ingrese los nombres del Alumno">	
+						</div>
+						<div class="grupo">
+							<label for="apellidoAlumno">Apellidos del Alumno</label>
+							<input name="apellidoAlumno" id="apellidoAlumno" placeholder="ingrese los apellidos del Alumno">
+						</div>
+						<div class="grupo">			
+							<label for="estadoAlumno">Estado del Alumno</label>
+							<select name="estadoAlumno" id="estadoAlumno" class="select">
+								<option value="">Seleccione un estado</option>
+								<option value="1">Activo</option>
+								<option value="0">Inactivo</option>					
+							</select>
+						</div>         
+					<div class="contenedor-botones">
+						<button type="reset" class="resetear botones">Resetar</button>
+						<button type="submit" class="guardar botones">Guardar</button>
+					</div>
+				</form>
+			</div>
+		</aside>
+			</section>
+			<section class="materia hidden">
+				<h2 class="titulo-materia">Materia</h2>
+				<div class="accionGuardar">
+					<label for="guardarMateria" class="labelMateria">Nombre Materia</label
+					><br />
+					<input type="hidden" id="idMateria">
+					<input
+						type="text"
+						id="nombreMateria"
+						name="guardarMateria"
+						class="guardarMateria"
+					/>
+					<button id="limpiar"  class="botonLimpiar boton ">Limpiar</button>
+					<button id="guardarMateria" class="boton btnGuardarMateria">Guardar</button>
+					
+				</div>
+				<div class="contenedorTablaMateria">
+					<table class="tablaMateria">
+						<thead class="theadMateria">
+							<tr>
+                                <td>Nombre de la materia</td>
+                                <td>Acción</td>
+                            </tr>
+						</thead>
+                        <tbody class="tbody tbodyMateria">
+                            
+                        </tbody>
+					</table>
+				</div>
+			</section>
+			<section class="asignarNotas hidden">
 			<h1>Asignar notas section</h1>
 		</section>
-
 		<section class="verReporte hidden">
 			<h1>Ver Reporte section</h1>
 		</section>
-
-		<section class="materia hidden" >
-			<h2 class="titulo-estudiante">Materia</h2>
-			<div class="accionGuardar">
-				<label for="guardarMateria" class="labelMateria">Nombre Materia</label><br />
-				<input type="hidden" id="idMateria">
-				<input type="text" id="nombreMateria" name="guardarMateria" class="guardarMateria" />
-				<button id="guardarMateria" class="botonGuardarMateria">Guardar</button>
-				<button id="limpiar">Limpiar</button>
-			</div>
-			<div class="contenedorTablaMateria">
-				<table class="tablaMateria">
-					<thead class="theadMateria">
-						<tr>
-							<td>Nombre</td>
-							<td>Acción</td>
-						</tr>
-					</thead>
-					<tbody class="tbodyMateria">
-						<tr>
-							<td></td>
-						</tr>
-					</tbody>
-				</table>
-			</div>
-		</section>
-
 		<section  class="gestionarProfesor hidden">
 			<h2 class="titulo-estudiante">Gestionar Profesor</h2>
 			<aside class="accionGuardar">
@@ -272,10 +189,9 @@
 		<section class="asignarMateriaProfesor hidden">
 			<h1>aqui va modal</h1>
 		</section>
-
-	</main>
-</body>
-<script src="assets/js/materias.js"></script>
-<script src="assets/js/main.js"></script>
-
+		</main>
+	</body>
+	<script src="assets/js/materias.js"></script>
+	<script src="assets/js/modal.js"></script>
+	<script src="./assets/js/main.js"></script>
 </html>
