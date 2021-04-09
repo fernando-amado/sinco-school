@@ -6,11 +6,11 @@ const welcome = document.getElementById('welcome');
 const materia = document.getElementById('materia');
 const profesor = document.getElementById('profesor');
 
-const gestionarAlumnos = document.querySelector('.gestionarAlumnos');
-const asignarNotas = document.querySelector('.asignarNotas');
-const verReporte = document.querySelector('.verReporte');
-const gestionarProfesor = document.querySelector('.gestionarProfesor');
-const asignarMateriaProfesor = document.querySelector('.asignarMateriaProfesor');
+// const gestionarAlumnos = document.querySelector('.gestionarAlumnos');
+// const asignarNotas = document.querySelector('.asignarNotas');
+// const verReporte = document.querySelector('.verReporte');
+// const gestionarProfesor = document.querySelector('.gestionarProfesor');
+// const asignarMateriaProfesor = document.querySelector('.asignarMateriaProfesor');
 
 
 options.forEach((option) => {

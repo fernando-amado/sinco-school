@@ -1,4 +1,4 @@
-let abrirModal = document.querySelector(".asignarEstudiantes");
+let abrirModal = document.querySelector(".gestionarAlumnos");
 let cerrar = document.querySelector(".cerrar");
 let modal = document.querySelector(".modal");
 let ventanaModal = document.querySelector(".ventana-modal");
