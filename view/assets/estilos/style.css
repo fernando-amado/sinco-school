@@ -198,14 +198,11 @@ section .gestionarAlumnos {
 	margin-top: 25px;
 	width: 100%;
 	height: auto;
-<<<<<<< HEAD
 	display:flex;
 	flex-direction: column;
 	justify-content:center;
 	
 
-=======
->>>>>>> fcf07057b3cd0fe57795d887338c9f15d2378d27
 }
 /*tabla*/
 table {
