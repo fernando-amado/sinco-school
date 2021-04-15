@@ -95,6 +95,7 @@ function EditarAlumno(id,nombre,apellido,estado){
 }
 
 function EliminarAlumno(id){
+    if(window.confirm("¿Seguro de que quiere eliminar este registro?"))
     fetch("https://localhost:44379/api/Alumnos/"+id, {
         headers: {
             'Accept': 'application/json',

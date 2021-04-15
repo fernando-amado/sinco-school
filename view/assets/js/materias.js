@@ -79,14 +79,16 @@ function Editar (id,nombre){
         })
     }).then(()=>{
         let tr=document.querySelector(`tr[data-id="${id}"]`)
-        tr.innerHTML=`<td>${nombre} <button onclick="AbrirEditar(${id},'${nombre}')">Editar</button>
-        <button onclick="Eliminar(${id})">Eliminar</button></td>`
+        tr.innerHTML=`<td>${nombre} 
+        <td><i class="btnEditar far fa-edit" onclick="AbrirEditar(${id},'${nombre}')"></i>
+        <i class=" fas fa-trash-alt btnEliminar" onclick="Eliminar(${id})"></i></td>`
     }),cerrarModal(event),
 			limpiarDatos();
 }
 
 function Eliminar(id){
-    fetch("https://localhost:44379/api/Materias/"+id, {
+    if(window.confirm("¿Seguro de que quiere eliminar este registro?")){
+        fetch("https://localhost:44379/api/Materias/"+id, {
         headers: {
             'Accept': 'application/json',
             'Content-Type': 'application/json'
@@ -101,6 +103,8 @@ function Eliminar(id){
         inputId.value="";
         inputNombre.value="";
     })
+    }
+    
 }
 
 listarMateria();
